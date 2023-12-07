@@ -1,0 +1,399 @@
+{
+  "info": {
+    "_postman_id": "cc9559cf-1e24-4df7-9b1e-ba75cbd5777a",
+    "name": "bePositive",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Customer",
+      "item": [
+        {
+          "name": "Get all customers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://0.0.0.0:821/api/v1/customer/",
+              "protocol": "http",
+              "host": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "port": "821",
+              "path": [
+                "api",
+                "v1",
+                "customer",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get specific customer",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://0.0.0.0:821/api/v1/customer/2",
+              "protocol": "http",
+              "host": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "port": "821",
+              "path": [
+                "api",
+                "v1",
+                "customer",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create new customer",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstName\": \"Michal\",\n    \"lastName\": \"Novák\",\n    \"email\": \"test@test.cz\",\n    \"telephone\": \"+420774165034\"\n}"
+            },
+            "url": {
+              "raw": "http://127.0.0.1:821/api/v1/customer/create",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "821",
+              "path": [
+                "api",
+                "v1",
+                "customer",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Edit customer",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"firstName\" : \"Jan\",\n    \"lastName\" : \"Novák\",\n    \"email\": \"testovaci@uzivatel.cz\",\n    \"telephone\": \"+420 777 444 555\"\n}"
+            },
+            "url": {
+              "raw": "http://0.0.0.0:821/api/v1/customer/1/edit",
+              "protocol": "http",
+              "host": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "port": "821",
+              "path": [
+                "api",
+                "v1",
+                "customer",
+                "1",
+                "edit"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remove customer",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://0.0.0.0:821/api/v1/customer/2/delete",
+              "protocol": "http",
+              "host": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "port": "821",
+              "path": [
+                "api",
+                "v1",
+                "customer",
+                "2",
+                "delete"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Product",
+      "item": [
+        {
+          "name": "Get all product",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://0.0.0.0:821/api/v1/product/",
+              "protocol": "http",
+              "host": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "port": "821",
+              "path": [
+                "api",
+                "v1",
+                "product",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get specific product",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://0.0.0.0:821/api/v1/product/1",
+              "protocol": "http",
+              "host": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "port": "821",
+              "path": [
+                "api",
+                "v1",
+                "product",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New product",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Veltlínské zelené 2021\",\n    \"value\": 100,\n    \"stockCode\": \"VZ\"\n}"
+            },
+            "url": {
+              "raw": "http://0.0.0.0:821/api/v1/product/create",
+              "protocol": "http",
+              "host": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "port": "821",
+              "path": [
+                "api",
+                "v1",
+                "product",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remove product",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://0.0.0.0:821/api/v1/product/1/delete",
+              "protocol": "http",
+              "host": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "port": "821",
+              "path": [
+                "api",
+                "v1",
+                "product",
+                "1",
+                "delete"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Order",
+      "item": [
+        {
+          "name": "Get all order",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://0.0.0.0:821/api/v1/order/",
+              "protocol": "http",
+              "host": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "port": "821",
+              "path": [
+                "api",
+                "v1",
+                "order",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get specific order",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://0.0.0.0:821/api/v1/order/2",
+              "protocol": "http",
+              "host": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "port": "821",
+              "path": [
+                "api",
+                "v1",
+                "order",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get order by customer",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://0.0.0.0:8000/api/v1/order/3/customer",
+              "protocol": "http",
+              "host": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "order",
+                "3",
+                "customer"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New order",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"customer\": 1,\n    \"items\" : [\n        {\n            \"customer\": 1,\n            \"product\": 1,\n            \"state\": 2,\n            \"price\": 152.2\n        },\n        {\n            \"customer\": 1,\n            \"product\": 1,\n            \"state\": 2,\n            \"price\": 152.2\n        }\n    ]\n}"
+            },
+            "url": {
+              "raw": "http://0.0.0.0:821/api/v1/order/create",
+              "protocol": "http",
+              "host": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "port": "821",
+              "path": [
+                "api",
+                "v1",
+                "order",
+                "create"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Edit order status",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"state\": 0\n}"
+            },
+            "url": {
+              "raw": "http://0.0.0.0:8000/api/v1/order/6/edit",
+              "protocol": "http",
+              "host": [
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "v1",
+                "order",
+                "6",
+                "edit"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+version: '3.4'
+networks:
+    bePositive:
+        driver: bridge
+
+services:
+    caddy:
+        container_name: positive_caddy
+        image: caddy:latest
+        restart: unless-stopped
+        ports:
+            - "821:821"
+        networks:
+            - bePositive
+        environment:
+            - ADMIN_USER=${ADMIN_USER:-admin}
+            - ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin}
+            - ADMIN_PASSWORD_HASH=${ADMIN_PASSWORD_HASH:-JDJhJDE0JE91S1FrN0Z0VEsyWmhrQVpON1VzdHVLSDkyWHdsN0xNbEZYdnNIZm1pb2d1blg4Y09mL0ZP}
+        volumes:
+            - ${PROJECT_ROOT}:/var/www/html${PROJECT_VOLUME_CONFIG}
+            - .docker/caddy/Caddyfile:/etc/caddy/Caddyfile
+            - .docker/caddy/site:/srv
+            - .docker/caddy/caddy_data:/data
+            - .docker/caddy/caddy_config:/config
+    php:
+        container_name: positive_php
+        hostname: positive_php
+        user: ${USER}
+        build:
+            context: .
+            dockerfile: ./.docker/php/Dockerfile
+        restart: always
+        environment:
+             - PHP_OPCACHE_VALIDATE_TIMESTAMPS=${PHP_OPCACHE_VALIDATE_TIMESTAMPS}
+        volumes:
+            - ${PROJECT_ROOT}:/var/www/html
+        networks:
+            - bePositive
+        command: /bin/bash -c "exec php-fpm" &&
+
+    mariadb:
+        image: mariadb:11.2.2
+        container_name: positive_mariadb
+        networks:
+            - bePositive
+        environment:
+            - MARIADB_ROOT_PASSWORD=nashpolishbarrette
+            - MARIADB_PASSWORD=nashpolishbarrette
+            - MARIADB_USER=toor
+            - MARIADB_DATABASE=bepositive_local
+        volumes:
+            - mysql:/var/lib/mysql
+        ports:
+            - "3306:3306"
+
+    adminer:
+        image: adminer:latest
+        container_name: positive_adminer
+        ports:
+            - "9000:8080"
+        restart: always
+        networks:
+            - bePositive
+        environment:
+            ADMINER_DEFAULT_SERVER: mysql
+            ADMINER_SALT: adminer-salt
+
+volumes:
+    mysql:
+    caddy_data:
+        external: true
+    caddy_config:

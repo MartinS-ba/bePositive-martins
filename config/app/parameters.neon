@@ -1,0 +1,14 @@
+# Parameters
+#
+parameters:
+	debugMode: true
+	# System
+	system:
+		error:
+			email: dev@dev.dev
+			presenter: Front:Error
+
+	database:
+		driver: pdo_pgsql
+		port: 5432
+		serverVersion: null

@@ -1,0 +1,10 @@
+# Host Config
+parameters:
+	 database:
+	 	driver: pdo_mysql
+	 	host: mariadb
+	 	port: 3306
+	 	dbname: bepositive_local
+	 	user: root
+	 	password: nashpolishbarrette
+	 	serverVersion: null
